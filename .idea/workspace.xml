@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c674af5b-8cc5-4cb2-96bb-9d3e0a622d19" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/catalina.2015-10-11.log" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/catalina.2015-10-11.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/localhost.2015-10-11.log" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/localhost.2015-10-11.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/localhost_access_log.2015-10-11.txt" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/localhost_access_log.2015-10-11.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/main.css" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/main.css" />
     </list>
@@ -170,7 +172,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="4" width="1300" height="780" extended-state="1" />
+    <frame x="-13" y="4" width="1300" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
