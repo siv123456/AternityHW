@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+    <script type="text/javascript" src="mainModule.js"></script>
+    <link rel="stylesheet" type="text/css" href="ngDialog-master/css/ngDialog-theme-default.css">
+    <script type="text/javascript" src="ngDialog-master/js/ngDialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Roles</title>
+</head>
+<body ng-app="mainModule" data-ng-controller="MainCtrl as main">
+<div class="container">
+    <table class=rolesTable border="1">
+        <thead>
+            <tr style="font-weight: bold">
+                <td>Role Name</td>
+                <td>Description</td>
+                <td>Privilieges</td>
+                <td>Expand</td>
+                <td>Edit</td>
+                <td>Remove</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(id, role) in main.roles.list">
+                <td>{{ role.name }}</td>
+                <td>{{ role.description }}</td>
+                <td>{{ role.privileges }}</td>
+                <td>
+                    <button type="submit" ng-click="main.expandDialog(id)">Expand</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

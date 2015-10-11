@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.aternity</groupId>
+        <artifactId>server-assistant-parent</artifactId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>assistant</artifactId>
+    <packaging>war</packaging>
+
+    <build>
+        <finalName>ROOT</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.jasig.maven</groupId>
+                <artifactId>sass-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>update-stylesheets</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <useCompass>true</useCompass>
+                    <resources>
+                        <resource>
+                            <source>
+                                <directory>${project.basedir}/src/main/webapp</directory>
+                                <includes>
+                                    <include>**</include>
+                                </includes>
+                            </source>
+                            <destination>${project.basedir}/src/main/webapp</destination>
+                        </resource>
+                    </resources>
+                    <sassOptions>
+                        <unix_newlines>true</unix_newlines>
+                        <cache>true</cache>
+                        <always_update>true</always_update>
+                        <cache_location>'${project.build.directory}/sass_cache'</cache_location>
+                        <style>${sass.style}</style>
+                    </sassOptions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

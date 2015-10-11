@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Roles page</title>
+    <script src="roles.js"></script>
+    <link media="screen, projection" rel="stylesheet" type="text/css" href="roles.css" />
+</head>
+<body>
+<h1>Roles</h1>
+API:
+<table>
+    <tr><td>GET</td><td>/api/roles</td><td>Returns map of ID to all roles and list of known privileges</td></tr>
+    <tr><td>POST</td><td>/api/roles/create</td><td>Create new role, body contains JSON object of Role</td></tr>
+    <tr><td>POST</td><td>/api/roles/{id}/update</td><td>Update a role object, body contains JSON object of Role</td></tr>
+    <tr><td>DELETE</td><td>/api/{id}/delete</td><td>Deletes a role by id</td></tr>
+</table>
+</body>
+</html>

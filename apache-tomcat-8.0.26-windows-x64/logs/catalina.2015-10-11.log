@@ -1,0 +1,160 @@
+11-Oct-2015 10:01:47.398 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The APR based Apache Tomcat Native library failed to load. The error reported was [F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+ java.lang.UnsatisfiedLinkError: F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+	at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+	at java.lang.ClassLoader.loadLibrary0(Unknown Source)
+	at java.lang.ClassLoader.loadLibrary(Unknown Source)
+	at java.lang.Runtime.loadLibrary0(Unknown Source)
+	at java.lang.System.loadLibrary(Unknown Source)
+	at org.apache.tomcat.jni.Library.<init>(Library.java:42)
+	at org.apache.tomcat.jni.Library.initialize(Library.java:175)
+	at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:197)
+	at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:106)
+	at org.apache.catalina.connector.Connector.setProtocol(Connector.java:564)
+	at org.apache.catalina.connector.Connector.<init>(Connector.java:66)
+	at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+	at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1178)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1451)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:551)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:599)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:310)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:484)
+
+11-Oct-2015 10:01:47.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.26
+11-Oct-2015 10:01:47.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 18 2015 11:38:37 UTC
+11-Oct-2015 10:01:47.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.26.0
+11-Oct-2015 10:01:47.467 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 7
+11-Oct-2015 10:01:47.470 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.1
+11-Oct-2015 10:01:47.472 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86
+11-Oct-2015 10:01:47.474 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files (x86)\Java\jre1.8.0_31
+11-Oct-2015 10:01:47.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_31-b13
+11-Oct-2015 10:01:47.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Oct-2015 10:01:47.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:01:47.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:01:47.487 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\conf\logging.properties
+11-Oct-2015 10:01:47.489 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Oct-2015 10:01:47.491 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\endorsed
+11-Oct-2015 10:01:47.494 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:01:47.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:01:47.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\temp
+11-Oct-2015 10:01:47.594 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Oct-2015 10:01:47.637 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Oct-2015 10:01:47.640 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+11-Oct-2015 10:01:47.642 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Oct-2015 10:01:47.642 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 432 ms
+11-Oct-2015 10:01:47.675 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+11-Oct-2015 10:01:47.675 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.26
+11-Oct-2015 10:01:47.686 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\AternityHwAngular
+11-Oct-2015 10:01:48.928 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-Oct-2015 10:01:49.133 INFO [localhost-startStop-1] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+11-Oct-2015 10:01:49.218 INFO [localhost-startStop-1] org.springframework.web.context.support.XmlWebApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Sun Oct 11 10:01:49 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:01:49.255 INFO [localhost-startStop-1] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/aternity.xml]
+11-Oct-2015 10:01:49.517 INFO [localhost-startStop-1] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 384 ms
+11-Oct-2015 10:01:49.587 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\AternityHwAngular has finished in 1,901 ms
+11-Oct-2015 10:01:49.589 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Oct-2015 10:01:49.594 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+11-Oct-2015 10:01:49.596 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1952 ms
+11-Oct-2015 10:05:29.610 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\New folder
+11-Oct-2015 10:05:29.639 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\New folder has finished in 29 ms
+11-Oct-2015 10:05:40.141 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/New folder]
+11-Oct-2015 10:05:40.233 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\ROOT
+11-Oct-2015 10:05:41.130 INFO [localhost-startStop-3] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-Oct-2015 10:05:41.309 INFO [localhost-startStop-3] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+11-Oct-2015 10:05:41.397 INFO [localhost-startStop-3] org.springframework.web.context.support.XmlWebApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Sun Oct 11 10:05:41 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:05:41.484 INFO [localhost-startStop-3] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/aternity.xml]
+11-Oct-2015 10:05:41.718 INFO [localhost-startStop-3] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 409 ms
+11-Oct-2015 10:05:41.721 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\ROOT has finished in 1,488 ms
+11-Oct-2015 10:06:22.228 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+11-Oct-2015 10:06:22.230 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.springframework.web.context.support.XmlWebApplicationContext.doClose Closing Root WebApplicationContext: startup date [Sun Oct 11 10:05:41 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:07:22.809 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/AternityHwAngular]
+11-Oct-2015 10:07:22.809 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.springframework.web.context.support.XmlWebApplicationContext.doClose Closing Root WebApplicationContext: startup date [Sun Oct 11 10:01:49 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:07:22.809 INFO [localhost-startStop-4] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\ROOT
+11-Oct-2015 10:07:23.851 INFO [localhost-startStop-4] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+11-Oct-2015 10:07:23.914 INFO [localhost-startStop-4] org.springframework.web.context.support.XmlWebApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Sun Oct 11 10:07:23 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:07:23.961 INFO [localhost-startStop-4] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/aternity.xml]
+11-Oct-2015 10:07:24.163 INFO [localhost-startStop-4] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 312 ms
+11-Oct-2015 10:07:24.163 INFO [localhost-startStop-4] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory F:\codeGitHub\angular\apache-tomcat-8.0.26-windows-x64\webapps\ROOT has finished in 1,354 ms
+11-Oct-2015 10:08:55.318 WARNING [main] org.apache.catalina.core.AprLifecycleListener.init The APR based Apache Tomcat Native library failed to load. The error reported was [F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+ java.lang.UnsatisfiedLinkError: F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+	at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+	at java.lang.ClassLoader.loadLibrary0(Unknown Source)
+	at java.lang.ClassLoader.loadLibrary(Unknown Source)
+	at java.lang.Runtime.loadLibrary0(Unknown Source)
+	at java.lang.System.loadLibrary(Unknown Source)
+	at org.apache.tomcat.jni.Library.<init>(Library.java:42)
+	at org.apache.tomcat.jni.Library.initialize(Library.java:175)
+	at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:197)
+	at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:106)
+	at org.apache.catalina.connector.Connector.setProtocol(Connector.java:564)
+	at org.apache.catalina.connector.Connector.<init>(Connector.java:66)
+	at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+	at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1178)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1451)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:551)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:599)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:310)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:484)
+
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.26
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 18 2015 11:38:37 UTC
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.26.0
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 7
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.1
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86
+11-Oct-2015 10:08:55.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files (x86)\Java\jre1.8.0_31
+11-Oct-2015 10:08:55.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_31-b13
+11-Oct-2015 10:08:55.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Oct-2015 10:08:55.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:08:55.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:08:55.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\conf\logging.properties
+11-Oct-2015 10:08:55.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Oct-2015 10:08:55.458 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\endorsed
+11-Oct-2015 10:08:55.458 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:08:55.458 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64
+11-Oct-2015 10:08:55.458 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\temp
+11-Oct-2015 10:08:55.552 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+11-Oct-2015 10:08:55.598 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Oct-2015 10:08:55.598 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+11-Oct-2015 10:08:55.598 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Oct-2015 10:08:55.598 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 492 ms
+11-Oct-2015 10:08:55.614 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+11-Oct-2015 10:08:55.614 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.26
+11-Oct-2015 10:08:55.645 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\webapps\ROOT
+11-Oct-2015 10:08:56.909 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-Oct-2015 10:08:57.149 INFO [localhost-startStop-1] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+11-Oct-2015 10:08:57.274 INFO [localhost-startStop-1] org.springframework.web.context.support.XmlWebApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Sun Oct 11 10:08:57 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:08:57.305 INFO [localhost-startStop-1] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/aternity.xml]
+11-Oct-2015 10:08:57.601 INFO [localhost-startStop-1] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 452 ms
+11-Oct-2015 10:08:57.664 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\webapps\ROOT has finished in 2,019 ms
+11-Oct-2015 10:08:57.679 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+11-Oct-2015 10:08:57.679 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+11-Oct-2015 10:08:57.679 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2080 ms
