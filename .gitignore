@@ -46,3 +46,4 @@ apache-tomcat-8.0.26-windows-x64/logs/localhost_access_log.2015-10-11.txt
 apache-tomcat-8.0.26-windows-x64/logs/catalina.2015-10-11.log
 *.log
 *.txt
+.idea/workspace.xml
