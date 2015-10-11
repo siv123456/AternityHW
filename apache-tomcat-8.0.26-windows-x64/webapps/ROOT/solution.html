@@ -28,7 +28,13 @@
                 <td>{{ role.description }}</td>
                 <td>{{ role.privileges }}</td>
                 <td>
-                    <button type="submit" ng-click="main.expandDialog(id)">Expand</button>
+                    <button type="submit" ng-click="main.expandDialog(id,'view')">Expand</button>
+                </td>
+                <td>
+                    <button type="submit" ng-click="main.editDialog(id,'edit')">Edit</button>
+                </td>
+                <td>
+                    <button type="submit" ng-click="main.removeDialog(id,'remove')">Remove</button>
                 </td>
             </tr>
         </tbody>

@@ -5,13 +5,20 @@
     <title></title>
 </head>
 <body >
-<label>Role Name : <input ng-model="main.roles.list[main.expandRoleID]['name']" type="text"
+<h1>{{main.dialogVars.values['Header']}}</h1>
+<label>Role Name : <input ng-model="main.roles.list[main.roleID]['name']" type="text"
                        value="{{main.roles.list[main.expandRoleID]['name']}}"/></label>
 <br>
-<label>Role Description : <input ng-model="main.roles.list[main.expandRoleID]['description']" type="text"
+<label>Role Description : <input ng-model="main.roles.list[main.roleID]['description']" type="text"
                           value="{{main.roles.list[main.expandRoleID]['description']}}"/></label>
 <br>
-<label>Role privileges : <input ng-model="main.roles.list[main.expandRoleID]['privileges']" type="text"
+<label>Role privileges : <input ng-model="main.roles.list[main.roleID]['privileges']" type="text"
                           value="{{main.roles.list[main.expandRoleID]['privileges']}}"/></label>
+
+<br>
+<br>
+<button type="submit" id="edit" ng-hide="main.dialogVars.values['disableEditBtn']">Submit Changes</button>
+<button type="submit" id="remove" ng-hide="main.dialogVars.values['disableRemoveBtn']">Remove Role</button>
+<button type="submit" id="discard" ng-click="closeThisDialog('close')">Discard/Close</button>
 </body>
 </html>
