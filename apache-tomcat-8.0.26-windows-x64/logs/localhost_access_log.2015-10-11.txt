@@ -52,3 +52,10 @@
 0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:47:07 +0300] "GET /ngDialog-master/js/ngDialog.js HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:47:07 +0300] "GET /main.css HTTP/1.1" 200 153
 0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:47:07 +0300] "GET /api/roles HTTP/1.1" 200 618
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:13 +0300] "GET /solution.html HTTP/1.1" 200 1412
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:13 +0300] "GET /mainModule.js HTTP/1.1" 200 1137
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:13 +0300] "GET /ngDialog-master/js/ngDialog.js HTTP/1.1" 200 38523
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:13 +0300] "GET /ngDialog-master/css/ngDialog-theme-default.css HTTP/1.1" 200 4477
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:13 +0300] "GET /main.css HTTP/1.1" 200 153
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:14 +0300] "GET /favicon.ico HTTP/1.1" 200 1150
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:49:14 +0300] "GET /api/roles HTTP/1.1" 200 620
