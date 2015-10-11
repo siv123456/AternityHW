@@ -17,8 +17,9 @@
 
 <br>
 <br>
-<button type="submit" id="edit" ng-hide="main.dialogVars.values['disableEditBtn']">Submit Changes</button>
+<button type="submit" id="edit" ng-hide="main.dialogVars.values['disableEditBtn']"
+        ng-click="closeThisDialog('submit changes')">Submit Changes</button>
 <button type="submit" id="remove" ng-hide="main.dialogVars.values['disableRemoveBtn']">Remove Role</button>
-<button type="submit" id="discard" ng-click="closeThisDialog('close')">Discard/Close</button>
+<button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
 </body>
 </html>

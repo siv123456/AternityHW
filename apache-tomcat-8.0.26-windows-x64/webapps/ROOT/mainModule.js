@@ -11,11 +11,11 @@ myApp.factory('roles',function($http){
 
     // GET
     self.get = roles.get;
-    roles.get = function(callbackf) {
+    roles.get = function(callback) {
         $http.get("http://localhost:8080/api/roles")
             .then(function successCallback(response){
                 roles.list = response.data.roles;
-                callbackf(response.data.privileges);
+                callback(response.data.privileges);
 
             }, function errorCallback(response){
                 alert(response.statusText);
@@ -71,12 +71,13 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogVars) {
     self.dialogVars = dialogVars;
 
     // Expand Role row into dialog
-    self.expandDialog = function(id,dialogType){
+    self.openDialog = function(id,dialogType){
         self.roleID = id;
         self.dialogVars.set(dialogType);
-
+        ngDialog.closeAll();
         ngDialog.open({
             template: 'dialogTemplate.html',
+            disableAnimation: true,
             closeByEscape: false,
             closeByDocument: false,
             showClose: false,
@@ -84,40 +85,21 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogVars) {
             className: 'ngdialog-theme-default'
         }).then(
             function(value) {
-                if (value == 'close') {
-                    ngdialog.close();
+                switch (value){
+                    case 'close':
+                        break;
+                    case 'submit changes':
+                        alert('Submitting changes to Role');
+                        break;
+                    case 'remove role':
+                        alert('Removing Role');
+                        break;
+                    default:
+                        alert('Encountered unknown dialog close option');
                 }
             }
         );
     };
 
-    // Expand row to edit role
-    self.editDialog = function(id){
-        self.roleID = id;
-        self.editBtnDisable = false;
-        self.removeBtnDisable = true;
-        self.dialogHeader = "Role To Edit";
-        ngDialog.open({
-            template: 'dialogTemplate.html',
-            closeByEscape: false,
-            closeByDocument: false,
-            scope: $scope,
-            className: 'ngdialog-theme-default'
-        });
-    }
 
-    // Expand row to remove role
-    self.removeDialog = function(id){
-        self.roleID = id;
-        self.editBtnDisable = true;
-        self.removeBtnDisable = false;
-        self.dialogHeader = "Role To Remove";
-        ngDialog.open({
-            template: 'dialogTemplate.html',
-            closeByEscape: false,
-            closeByDocument: false,
-            scope: $scope,
-            className: 'ngdialog-theme-default'
-        });
-    }
 });

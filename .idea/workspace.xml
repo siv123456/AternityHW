@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c674af5b-8cc5-4cb2-96bb-9d3e0a622d19" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/dialogTemplate.html" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/dialogTemplate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/main.css" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/localhost_access_log.2015-10-11.txt" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/logs/localhost_access_log.2015-10-11.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/mainModule.js" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/mainModule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/solution.html" afterPath="$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/solution.html" />
     </list>
@@ -29,28 +29,28 @@
       <file leaf-file-name="solution.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/solution.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.0">
-              <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
+            <state vertical-scroll-proportion="-23.538462">
+              <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainModule.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainModule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/mainModule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6559486">
-              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dialogTemplate.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dialogTemplate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/dialogTemplate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.43691587">
+              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -89,10 +89,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
-    <option name="y" value="4" />
-    <option name="width" value="1300" />
-    <option name="height" value="780" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -195,14 +195,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="4" width="1300" height="780" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25039744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -265,26 +265,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/dialogTemplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/solution.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.0">
-          <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
+        <state vertical-scroll-proportion="-23.538462">
+          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/mainModule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6559486">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apache-tomcat-8.0.26-windows-x64/webapps/ROOT/dialogTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43691587">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
           <folding />
         </state>
       </provider>
