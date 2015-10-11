@@ -22,3 +22,15 @@
 0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:09:10 +0300] "GET /ngDialog-master/js/ngDialog.js HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:09:10 +0300] "GET /ngDialog-master/css/ngDialog-theme-default.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:09:11 +0300] "GET /api/roles HTTP/1.1" 200 620
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:38:51 +0300] "GET /solution.html HTTP/1.1" 200 1412
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:38:51 +0300] "GET /mainModule.js HTTP/1.1" 200 1137
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:38:51 +0300] "GET /ngDialog-master/css/ngDialog-theme-default.css HTTP/1.1" 200 4477
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:38:51 +0300] "GET /main.css HTTP/1.1" 200 121
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:38:51 +0300] "GET /ngDialog-master/js/ngDialog.js HTTP/1.1" 200 38523
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:38:51 +0300] "GET /api/roles HTTP/1.1" 200 618
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:41:56 +0300] "GET /solution.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:41:57 +0300] "GET /mainModule.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:41:57 +0300] "GET /ngDialog-master/css/ngDialog-theme-default.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:41:57 +0300] "GET /ngDialog-master/js/ngDialog.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:41:57 +0300] "GET /main.css HTTP/1.1" 200 153
+0:0:0:0:0:0:0:1 - - [11/Oct/2015:10:41:57 +0300] "GET /api/roles HTTP/1.1" 200 618
