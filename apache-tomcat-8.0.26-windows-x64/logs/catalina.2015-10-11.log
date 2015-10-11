@@ -158,3 +158,11 @@
 11-Oct-2015 10:08:57.679 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 11-Oct-2015 10:08:57.679 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 11-Oct-2015 10:08:57.679 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2080 ms
+11-Oct-2015 10:35:58.745 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+11-Oct-2015 10:35:58.746 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.springframework.web.context.support.XmlWebApplicationContext.doClose Closing Root WebApplicationContext: startup date [Sun Oct 11 10:08:57 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:37:28.763 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\webapps\ROOT
+11-Oct-2015 10:37:29.884 INFO [localhost-startStop-2] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+11-Oct-2015 10:37:29.965 INFO [localhost-startStop-2] org.springframework.web.context.support.XmlWebApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Sun Oct 11 10:37:29 IDT 2015]; root of context hierarchy
+11-Oct-2015 10:37:30.005 INFO [localhost-startStop-2] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/aternity.xml]
+11-Oct-2015 10:37:30.256 INFO [localhost-startStop-2] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 372 ms
+11-Oct-2015 10:37:30.256 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory F:\codeGitHub\angular\AternityHW\apache-tomcat-8.0.26-windows-x64\webapps\ROOT has finished in 1,493 ms

@@ -54,3 +54,29 @@ Caused by: java.lang.ClassNotFoundException: org.springframework.web.context.Con
 11-Oct-2015 10:07:23.851 INFO [localhost-startStop-4] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
 11-Oct-2015 10:08:56.924 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
 11-Oct-2015 10:08:57.149 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+11-Oct-2015 10:35:58.746 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+11-Oct-2015 10:35:58.748 SEVERE [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.listenerStop Exception sending context destroyed event to listener instance of class org.jboss.resteasy.plugins.spring.SpringContextLoaderListener
+ java.lang.NoClassDefFoundError: org/springframework/web/context/ContextCleanupListener
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:116)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4776)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5390)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.core.ContainerBase.removeChild(ContainerBase.java:827)
+	at org.apache.catalina.startup.HostConfig.undeploy(HostConfig.java:1386)
+	at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1313)
+	at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1534)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:285)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1141)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.context.ContextCleanupListener
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1332)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1166)
+	... 16 more
+
+11-Oct-2015 10:37:29.706 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+11-Oct-2015 10:37:29.884 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
