@@ -82,3 +82,5 @@ Caused by: java.lang.ClassNotFoundException: org.springframework.web.context.Con
 11-Oct-2015 10:37:29.884 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
 11-Oct-2015 10:49:11.200 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
 11-Oct-2015 10:49:11.507 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+11-Oct-2015 11:00:23.845 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+11-Oct-2015 11:00:24.171 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
