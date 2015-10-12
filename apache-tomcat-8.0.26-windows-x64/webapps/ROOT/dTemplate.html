@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="dTemplate.css">
+    <title></title>
+</head>
+<body >
+<h1>{{main.dialogServices.values['Header']}}</h1>
+<label>Role Name : <input ng-model="main.roles.list[main.roleID]['name']" type="text"
+                          value="{{main.roles.list[main.expandRoleID]['name']}}"/></label>
+<br>
+<label>Role Description : <input ng-model="main.roles.list[main.roleID]['description']" type="text"
+                                 value="{{main.roles.list[main.expandRoleID]['description']}}"/></label>
+<br>
+<label>Role privileges : <input ng-model="main.roles.list[main.roleID]['privileges']" type="text"
+                                value="{{main.roles.list[main.expandRoleID]['privileges']}}"/></label>
+
+<br>
+<br>
+<button type="submit" id="edit" ng-hide="main.dialogServices.values['disableEditBtn']"
+        ng-click="closeThisDialog('submit changes')">Submit Changes</button>
+<button type="submit" id="remove" ng-hide="main.dialogServices.values['disableRemoveBtn']"
+        ng-click="main.remove(main.roleID)">Remove Role</button>
+<button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
+
+<br>
+<p class="statusLine" ng-hide="main.dialogServices.values['hideStatus']">{{main.dialogServices.values['statusText']}}</p>
+
+</body>
+</html>

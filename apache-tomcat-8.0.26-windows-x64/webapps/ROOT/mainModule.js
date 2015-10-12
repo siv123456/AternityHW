@@ -21,25 +21,37 @@ myApp.factory('roles',function($http){
                 alert(response.statusText);
             });
     };
+    // DELETE
+    self.delete = roles.delete;
+    roles.delete = function(callback, id){
+        $http.delete("http://localhost:8080/api/roles/"+id+"/delete")
+            .then(function successCallback(response){
+                callback(response);
+            },function errorCallback(response){
+                callback(response);
+            });
+    };
 
     return roles;
 
 });
 
-myApp.factory('dialogVars', function(){
+
+myApp.factory('dialogServices', function(){
     var self = this;
     var dVars = {};
     dVars.values = {};
 
-
     self.set = dVars.set;
     dVars.set = function(dialogType){
+        dVars.values['statusText'] = "";
         switch(dialogType){
             case 'view':
                 dVars.values = {
                     disableEditBtn : true,
                     disableRemoveBtn : true,
                     Header : 'View Role',
+                    hideStatus: false
                 };
                 break;
             case 'edit':
@@ -47,6 +59,7 @@ myApp.factory('dialogVars', function(){
                     disableEditBtn : false,
                     disableRemoveBtn : true,
                     Header : 'Edit Role',
+                    hideStatus: true
                 };
                 break;
             case 'remove':
@@ -54,6 +67,7 @@ myApp.factory('dialogVars', function(){
                     disableEditBtn : true,
                     disableRemoveBtn : false,
                     Header : 'Remove Role',
+                    hideStatus: false
                 };
                 break;
             default:
@@ -61,47 +75,55 @@ myApp.factory('dialogVars', function(){
         }
     };
 
+    self.removeRole = dVars.removeRole;
+    dVars.removeRole = function(id){
+        dVars.values['hideStatus'] = false;
+        dVars.values['statusText'] = "Removing Role: "+ id;
+    };
 
     return dVars
 });
 
-myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogVars) {
+myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogServices) {
     var self = this;
     self.roles = roles;
-    self.roles.get();
-    self.dialogVars = dialogVars;
-    self.statusText = "ff";
+    self.roles.get(function(res){
+        self.fullPrivList = res;
+    });
+    self.dialogServices = dialogServices;
 
     // Expand Role row into dialog
     self.openDialog = function(id,dialogType){
         self.roleID = id;
-        self.dialogVars.set(dialogType);
+        self.dialogServices.set(dialogType);
         ngDialog.closeAll();
         ngDialog.open({
-            template: 'dialogTemplate.html',
+            template: 'dTemplate.html',
             disableAnimation: true,
             closeByEscape: false,
             closeByDocument: false,
             showClose: false,
             scope: $scope,
             className: 'ngdialog-theme-default'
-        }).then(
-            function(value) {
-                switch (value){
-                    case 'close':
-                        break;
-                    case 'submit changes':
-                        alert('Submitting changes to Role');
-                        break;
-                    case 'remove role':
-                        alert('Removing Role');
-                        break;
-                    default:
-                        alert('Encountered unknown dialog close option');
-                }
-            }
-        );
+        })
     };
 
+    // create init values
+    self.createObj = {};
+    self.createObj.name = 'secure444';
+    self.createObj.desc = 'Description..';
+    self.createObj.priv = 'View Data,View Users,Manage Users,View Roles';
+
+    self.remove = function(id){
+        //self.dialogServices.removeRole(id);
+        ngDialog.closeAll();
+        self.roles.delete(function(res){
+            if (res.statusText == "OK") {
+                self.roles.get()
+            } else {
+                alert("Role deletion problem: " + res.data);
+            }
+        },id);
+    };
 
 });
