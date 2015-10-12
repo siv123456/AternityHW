@@ -41,5 +41,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-apache-tomcat-8.0.26-windows-x64/logs/*
-.idea/*
+
+# local logs
+.idea/
+apache-tomcat-8.0.26-windows-x64/logs/

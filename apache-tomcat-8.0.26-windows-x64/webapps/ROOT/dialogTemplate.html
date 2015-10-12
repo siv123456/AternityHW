@@ -6,6 +6,7 @@
 </head>
 <body >
 <h1>{{main.dialogVars.values['Header']}}</h1>
+
 <label>Role Name : <input ng-model="main.roles.list[main.roleID]['name']" type="text"
                        value="{{main.roles.list[main.expandRoleID]['name']}}"/></label>
 <br>
@@ -21,5 +22,8 @@
         ng-click="closeThisDialog('submit changes')">Submit Changes</button>
 <button type="submit" id="remove" ng-hide="main.dialogVars.values['disableRemoveBtn']">Remove Role</button>
 <button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
+
+<br>
+
 </body>
 </html>

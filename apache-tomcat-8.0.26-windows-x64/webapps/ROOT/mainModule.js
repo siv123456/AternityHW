@@ -31,6 +31,7 @@ myApp.factory('dialogVars', function(){
     var dVars = {};
     dVars.values = {};
 
+
     self.set = dVars.set;
     dVars.set = function(dialogType){
         switch(dialogType){
@@ -38,21 +39,21 @@ myApp.factory('dialogVars', function(){
                 dVars.values = {
                     disableEditBtn : true,
                     disableRemoveBtn : true,
-                    Header : 'View Role'
+                    Header : 'View Role',
                 };
                 break;
             case 'edit':
                 dVars.values = {
                     disableEditBtn : false,
                     disableRemoveBtn : true,
-                    Header : 'Edit Role'
+                    Header : 'Edit Role',
                 };
                 break;
             case 'remove':
                 dVars.values = {
                     disableEditBtn : true,
                     disableRemoveBtn : false,
-                    Header : 'Remove Role'
+                    Header : 'Remove Role',
                 };
                 break;
             default:
@@ -69,6 +70,7 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogVars) {
     self.roles = roles;
     self.roles.get();
     self.dialogVars = dialogVars;
+    self.statusText = "ff";
 
     // Expand Role row into dialog
     self.openDialog = function(id,dialogType){
