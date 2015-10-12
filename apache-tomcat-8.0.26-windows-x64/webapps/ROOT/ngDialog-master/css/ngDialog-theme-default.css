@@ -56,8 +56,9 @@
 
 
 .ngdialog.ngdialog-theme-default {
-  padding-bottom: 160px;
-  padding-top: 160px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
 }
 
 .ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
@@ -66,10 +67,12 @@
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
-  -webkit-animation: ngdialog-flyin .5s;
-  animation: ngdialog-flyin .5s;
+  -webkit-animation: ngdialog-flyin .1s;
+  animation: ngdialog-flyin .1s;
   background: #dde4f0;
   border-radius: 5px;
+    border-color: black;
+    border: double;
   color: #367bf0;
   font-family: 'Helvetica',sans-serif;
   font-size: 1.1em;

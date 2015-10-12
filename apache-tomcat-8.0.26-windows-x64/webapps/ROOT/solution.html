@@ -10,33 +10,39 @@
     <title>Roles</title>
 </head>
 <body ng-app="mainModule" data-ng-controller="MainCtrl as main">
+<div class="scrollingCreate">
+    <button type="submit" ng-click="main.openDialog(0,'create')"><img class="icon" src="icons/create.jpg" /></button>
+</div>
 <div class="container">
+
 
     <table class=rolesTable border="1">
         <thead>
             <tr style="font-weight: bold">
+                <td>Remove</td>
                 <td>Role Name</td>
                 <td>Description</td>
                 <td>Privilieges</td>
-                <td>Expand</td>
+                <td>View</td>
                 <td>Edit</td>
-                <td>Remove</td>
+
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="(id, role) in main.roles.list">
+                <td>
+                    <button type="submit" ng-click="main.openDialog(id,'remove')"><img class="icon" src="icons/remove.jpg" /></button>
+                </td>
                 <td>{{ role.name }}</td>
                 <td>{{ role.description }}</td>
-                <td>{{ role.privileges }}</td>
+                <td>{{ role.privileges.toString() }}</td>
                 <td>
-                    <button type="submit" ng-click="main.openDialog(id,'view')">Expand</button>
+                    <button type="submit" ng-click="main.openDialog(id,'view')"><img class="icon" src="icons/view.jpg" /></button>
                 </td>
                 <td>
-                    <button type="submit" ng-click="main.openDialog(id,'edit')">Edit</button>
+                    <button type="submit" ng-click="main.openDialog(id,'edit')"><img class="icon" src="icons/edit.jpg" /></button>
                 </td>
-                <td>
-                    <button type="submit" ng-click="main.openDialog(id,'remove')">Remove</button>
-                </td>
+
             </tr>
         </tbody>
     </table>
