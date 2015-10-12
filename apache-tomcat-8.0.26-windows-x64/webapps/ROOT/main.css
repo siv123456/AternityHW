@@ -1,8 +1,9 @@
 .container {
     width: 60%;
     margin: auto;
-    border:3px solid #8AC007;
-    background-color: #ebf017;
+    border:1px solid #367bf0;
+    background-color: #dde4f0;
+    font-family: 'Helvetica',sans-serif;
 }
 
 .rolesTable {
