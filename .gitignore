@@ -45,3 +45,4 @@ Temporary Items
 # local logs
 .idea/
 apache-tomcat-8.0.26-windows-x64/logs/
+.idea/workspace.xml
