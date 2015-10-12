@@ -73,6 +73,7 @@ myApp.factory('dialogServices', function(){
     var self = this;
     var dVars = {};
     dVars.values = {};
+    dVars.values.privCbs = {};
 
     self.set = dVars.set;
     dVars.set = function(dialogType, roleLineObj){
@@ -83,6 +84,7 @@ myApp.factory('dialogServices', function(){
                     disableNameInput: true,
                     disableDescriptionInput: true,
                     disablePrivilegesInput: true,
+                    disablePrivilegesCheckboxes: true,
                     hideEditBtn : true,
                     hideCreateBtn: true,
                     hideRemoveBtn : true,
@@ -95,6 +97,7 @@ myApp.factory('dialogServices', function(){
                     disableNameInput: false,
                     disableDescriptionInput: false,
                     disablePrivilegesInput: false,
+                    disablePrivilegesCheckboxes: false,
                     hideEditBtn : false,
                     hideCreateBtn: true,
                     hideRemoveBtn : true,
@@ -107,6 +110,7 @@ myApp.factory('dialogServices', function(){
                     disableNameInput: true,
                     disableDescriptionInput: true,
                     disablePrivilegesInput: true,
+                    disablePrivilegesCheckboxes: true,
                     hideEditBtn : true,
                     hideCreateBtn: true,
                     hideRemoveBtn : false,
@@ -119,6 +123,7 @@ myApp.factory('dialogServices', function(){
                     disableNameInput: false,
                     disableDescriptionInput: false,
                     disablePrivilegesInput: false,
+                    disablePrivilegesCheckboxes: false,
                     hideEditBtn : true,
                     hideCreateBtn: false,
                     hideRemoveBtn : true,
@@ -130,7 +135,6 @@ myApp.factory('dialogServices', function(){
 
 
         }
-        dVars.values['statusText'] = "";
         dVars.values['name'] = roleLineObj['name'];
         dVars.values['description'] = roleLineObj['description'];
         dVars.values['privileges'] = roleLineObj['privileges'];
@@ -140,6 +144,17 @@ myApp.factory('dialogServices', function(){
     dVars.removeRole = function(id){
         dVars.values['hideStatus'] = false;
         dVars.values['statusText'] = "Removing Role: "+ id;
+    };
+
+    self.checkBoxTester = dVars.checkBoxTester;
+    dVars.checkBoxTester = function(priv2check, PrivList){
+        return PrivList.indexOf(priv2check) >= 0
+    };
+
+
+    self.getPrivCheckboxesState = dVars.getPrivCheckboxesState;
+    dVars.getPrivCheckboxesState = function(p){
+        return(dVars.values.privCbs[p]);
     };
 
     return dVars
@@ -193,6 +208,17 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogServices) {
 
     // run the create role
     self.create = function() {
+        var privArr = [];
+        for (p in self.fullPrivList) {
+            pName = self.fullPrivList[p];
+
+            if (self.dialogServices.values.privCbs[pName]){
+                privArr.push(pName);
+            }
+        }
+        self.dialogServices.values['privileges'] = privArr.join(',');
+        alert(self.dialogServices.values['privileges']);
+        ngDialog.closeAll();
         self.roles.create(function (res) {
             if (res.statusText == "OK") {
                 self.roles.get()

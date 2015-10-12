@@ -15,10 +15,21 @@
                                  ng-model="main.dialogServices.values['description']" type="text"
                                  value="{{main.dialogServices.values['description']}}"/></label>
 <br>
+<!--
 <label>Role privileges : <input ng-disabled="main.dialogServices.values['disablePrivilegesInput']"
                                 ng-model="main.dialogServices.values['privileges']" type="text"
                                 value="{{main.dialogServices.values['privileges']}}"/></label>
+-->
 
+<div class="privilegeCheckBoxes">
+    <label>Role privileges :
+        <form ng-repeat="p in main.fullPrivList">
+            <label><input ng-disabled="main.dialogServices.values['disablePrivilegesCheckboxes']"
+                          ng-checked="main.dialogServices.checkBoxTester(p,main.dialogServices.values['privileges'])"
+                        type="checkbox" ng-model="main.dialogServices.values.privCbs[p]" >{{p}}</label>
+        </form>
+    </label>
+</div>
 <br>
 <br>
 <button type="submit" id="edit" ng-hide="main.dialogServices.values['hideEditBtn']"
