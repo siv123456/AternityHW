@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="dTemplate.css">
+    <title></title>
+</head>
+<body >
+<h1>{{main.dialogObj.general['Header']}}</h1>
+<label>Role Name : <input ng-disabled="main.dialogObj.inputs['disableNameInput']"
+                          ng-model="main.dialogObj.inputs['name']" type="text"
+                          value="{{main.dialogObj.inputs['name']}}"/></label>
+<br>
+<label>Role Description : <input ng-disabled="main.dialogObj.inputs['disableDescriptionInput']"
+                                 ng-model="main.dialogObj.inputs['description']" type="text"
+                                 value="{{main.dialogObj.inputs['description']}}"/></label>
+<br>
+<div class="privilegeCheckBoxes">
+    <label>Role privileges :
+        <form ng-repeat="p in main.fullPrivList">
+            <label><input ng-disabled="main.dialogObj.inputs['disablePrivilegeCheckboxes']"
+                          ng-checked="main.dialogObj.inputs.cbs[p]"
+                          type="checkbox" ng-bind="main.dialogObj.inputs.cbs[p]"
+                          ng-model="main.dialogObj.inputs.cbs[p]">{{p}}</label>
+        </form>
+    </label>
+</div>
+<br>
+<br>
+<button type="submit" id="edit" ng-hide="main.dialogObj.buttons['hideEditBtn']"
+        ng-click="main.update()">Submit Changes</button>
+
+<button type="submit" id="remove" ng-hide="main.dialogObj.buttons['hideRemoveBtn']"
+        ng-click="main.remove()">Remove Role</button>
+
+<button type="submit" id="create" ng-hide="main.dialogObj.buttons['hideCreateBtn']"
+        ng-click="main.create()">Create Role</button>
+
+<button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
+
+<br>
+<p class="statusLine" ng-hide="main.dialogObj.values['hideStatus']">
+    {{main.dialogObj.values['statusText']}}</p>
+
+</body>
+</html>
