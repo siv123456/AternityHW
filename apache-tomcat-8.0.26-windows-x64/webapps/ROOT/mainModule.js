@@ -9,6 +9,23 @@ myApp.factory('roles',function($http){
     var roles = {};
     roles.list = {};
 
+    self.checkboxes2array = function(cbObj){
+    // this function will take the privilege checkboxes and
+    // translate them to array of strings
+        var privArr = [];
+        for (var p in cbObj){if (cbObj[p]) {privArr.push(p)}}
+        return privArr;
+    };
+    self.constructRoleObj = function(dialogObj){
+        // function builds the new role json data to
+        // be sent when creating/updating a role.
+        return {
+            "name":dialogObj.inputs['name'],
+            "description":dialogObj.inputs['description'],
+            "privileges":self.checkboxes2array(dialogObj.inputs.cbs)
+        };
+    };
+
     // GET
     self.get = roles.get;
     roles.get = function(callback) {
@@ -35,13 +52,7 @@ myApp.factory('roles',function($http){
     // CREATE
     self.create = roles.create;
     roles.create = function(callback, dialogObj){
-        var privArr = [];
-        for (var p in dialogObj.inputs.cbs){if (dialogObj.inputs.cbs[p]) {privArr.push(p)}};
-        var newRole = {
-            "name":dialogObj.inputs['name'],
-            "description":dialogObj.inputs['description'],
-            "privileges":privArr
-        };
+        var newRole = self.constructRoleObj(dialogObj);
         $http.post("http://localhost:8080/api/roles/create",JSON.stringify(newRole))
             .then(function successCallback(response){
                 callback(response);
@@ -53,13 +64,7 @@ myApp.factory('roles',function($http){
     // UPDATE
     self.update = roles.update;
     roles.update = function(callback, dialogObj){
-        var privArr = [];
-        for (var p in dialogObj.inputs.cbs){if (dialogObj.inputs.cbs[p]) {privArr.push(p)}};
-        var updatedRole = {
-            "name":dialogObj.inputs['name'],
-            "description":dialogObj.inputs['description'],
-            "privileges":privArr
-        };
+        var updatedRole = self.constructRoleObj(dialogObj);
         $http.post("http://localhost:8080/api/roles/"+dialogObj.general['roleID']+"/update",JSON.stringify(updatedRole))
             .then(function successCallback(response){
                 callback(response);
@@ -76,8 +81,6 @@ myApp.factory('roles',function($http){
 myApp.factory('dialogService', function(){
     var self = this;
     var dialogObj = {};
-    dialogObj.values = {};
-    dialogObj.values.privCbs = {};
 
     // NEW DIALOG OBJECT DEFINITION
     // the general object will hold things like the dialog header
@@ -167,6 +170,7 @@ myApp.factory('dialogService', function(){
 });
 
 myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogService) {
+    // Main controller
     var self = this;
     self.roles = roles;
     self.roles.get(function(res){
@@ -218,15 +222,6 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogService) {
 
     // run update role
     self.update = function() {
-        //for (p in self.fullPrivList) {
-         //   pName = self.fullPrivList[p];
-         //   if (self.dialogObj.values['privileges'].indexOf(pName) == -1){
-         //       self.dialogObj.values['privileges'].push(pName);
-         //   }
-
-        //}
-        //self.dialogObj.values['privileges'] = privArr.join(',');
-
         ngDialog.closeAll();
         self.roles.update(function (res) {
             if (res.statusText == "OK") {
