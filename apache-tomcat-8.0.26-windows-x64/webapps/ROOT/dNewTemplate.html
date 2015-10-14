@@ -38,9 +38,9 @@
 
 <button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
 
-<br>
-<p class="statusLine" ng-hide="main.dialogObj.values['hideStatus']">
-    {{main.dialogObj.values['statusText']}}</p>
+<button type="submit" id="moveToEditView" ng-hide="main.dialogObj.buttons['hideGoToEditModeBtn']"
+        ng-click="main.openDialog(main.dialogObj.general['roleID'],'toEditMode')">Go to edit mode</button>
+
 
 </body>
 </html>

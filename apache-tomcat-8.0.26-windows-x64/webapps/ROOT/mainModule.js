@@ -103,6 +103,7 @@ myApp.factory('dialogService', function(){
         dialogObj.buttons['hideEditBtn'] = true;
         dialogObj.buttons['hideCreateBtn'] = false;
         dialogObj.buttons['hideRemoveBtn'] = true;
+        dialogObj.buttons['hideGoToEditModeBtn'] = true;
     };
     self.setUpdate = function (roleObj){
         dialogObj.general['Header'] = 'Update Role';
@@ -114,6 +115,7 @@ myApp.factory('dialogService', function(){
         dialogObj.buttons['hideEditBtn'] = false;
         dialogObj.buttons['hideCreateBtn'] = true;
         dialogObj.buttons['hideRemoveBtn'] = true;
+        dialogObj.buttons['hideGoToEditModeBtn'] = true;
     };
     self.setRemove = function (roleObj){
         dialogObj.general['Header'] = 'Remove Role';
@@ -125,6 +127,7 @@ myApp.factory('dialogService', function(){
         dialogObj.buttons['hideEditBtn'] = true;
         dialogObj.buttons['hideCreateBtn'] = true;
         dialogObj.buttons['hideRemoveBtn'] = false;
+        dialogObj.buttons['hideGoToEditModeBtn'] = true;
     };
     self.setView = function (roleObj){
         dialogObj.general['Header'] = 'View Role';
@@ -136,6 +139,7 @@ myApp.factory('dialogService', function(){
         dialogObj.buttons['hideEditBtn'] = true;
         dialogObj.buttons['hideCreateBtn'] = true;
         dialogObj.buttons['hideRemoveBtn'] = true;
+        dialogObj.buttons['hideGoToEditModeBtn'] = false;
     };
     self.setCheckboxesState = function (roleObj, fullPrivList){
         if (roleObj.name !== '')
@@ -157,10 +161,11 @@ myApp.factory('dialogService', function(){
         if (id > 0) { roleObj = rolesObj.list[id]; dialogObj.general['roleID']=id }
         self.setCheckboxesState(roleObj, fullPrivList);
         switch (dialogType){
-            case 'create' : self.setCreate();break;
-            case 'update' : self.setUpdate(roleObj); break;
-            case 'remove' : self.setRemove(roleObj); break;
-            case 'view' : self.setView(roleObj); break;
+            case 'create'       : self.setCreate();break;
+            case 'update'       : self.setUpdate(roleObj); break;
+            case 'remove'       : self.setRemove(roleObj); break;
+            case 'view'         : self.setView(roleObj); break;
+            case 'toEditMode'   : self.setUpdate(roleObj); break;
             default:
         }
     };
@@ -186,7 +191,7 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogService) {
         ngDialog.open({
             template: 'dNewTemplate.html',
             disableAnimation: true,
-            closeByEscape: false,
+            closeByEscape: true,
             closeByDocument: false,
             showClose: false,
             scope: $scope,
@@ -227,7 +232,7 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogService) {
             if (res.statusText == "OK") {
                 self.roles.get()
             } else {
-                alert("Role creation problem: " + res.data);
+                alert("Role Updating problem: " + res.data);
             }
         }, self.dialogObj);
     };
