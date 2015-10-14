@@ -24,8 +24,7 @@ myApp.factory('roles',function($http){
     // DELETE
     self.delete = roles.delete;
     roles.delete = function(callback, dialogObj){
-        id = dialogObj.general['roleID'];
-        $http.delete("http://localhost:8080/api/roles/"+id+"/delete")
+        $http.delete("http://localhost:8080/api/roles/"+dialogObj.general['roleID']+"/delete")
             .then(function successCallback(response){
                 callback(response);
             },function errorCallback(response){
@@ -54,13 +53,14 @@ myApp.factory('roles',function($http){
     // UPDATE
     self.update = roles.update;
     roles.update = function(callback, dialogObj){
-        id = dialogObj.general['roleId'];
+        var privArr = [];
+        for (var p in dialogObj.inputs.cbs){if (dialogObj.inputs.cbs[p]) {privArr.push(p)}};
         var updatedRole = {
             "name":dialogObj.inputs['name'],
             "description":dialogObj.inputs['description'],
-            "privileges":Object.keys(dialogObj.inputs.cbs)
+            "privileges":privArr
         };
-        $http.post("http://localhost:8080/api/roles/"+id+"/update",JSON.stringify(updatedRole))
+        $http.post("http://localhost:8080/api/roles/"+dialogObj.general['roleID']+"/update",JSON.stringify(updatedRole))
             .then(function successCallback(response){
                 callback(response);
             },function errorCallback(response){
@@ -102,7 +102,7 @@ myApp.factory('dialogService', function(){
         dialogObj.buttons['hideRemoveBtn'] = true;
     };
     self.setUpdate = function (roleObj){
-        dialogObj.general['Header'] = 'Edit Role';
+        dialogObj.general['Header'] = 'Update Role';
         dialogObj.inputs['name'] = roleObj['name'];
         dialogObj.inputs['description'] = roleObj['description'];
         dialogObj.inputs['disableNameInput'] = false;
@@ -163,90 +163,6 @@ myApp.factory('dialogService', function(){
     };
     // END OF NEW DIALOG OBJECT DEFINITION
 
-
-    //self.set = dialogObj.set;
-    /**dialogObj.set = function(dialogType, roleLineObj){
-
-        switch(dialogType){
-            case 'view':
-                dialogObj.values = {
-                    disableNameInput: true,
-                    disableDescriptionInput: true,
-                    disablePrivilegesInput: true,
-                    disablePrivilegesCheckboxes: true,
-                    hideEditBtn : true,
-                    hideCreateBtn: true,
-                    hideRemoveBtn : true,
-                    Header : 'View Role',
-                    hideStatus: false
-                };
-                break;
-            case 'edit':
-                dialogObj.values = {
-                    disableNameInput: false,
-                    disableDescriptionInput: false,
-                    disablePrivilegesInput: false,
-                    disablePrivilegesCheckboxes: false,
-                    hideEditBtn : false,
-                    hideCreateBtn: true,
-                    hideRemoveBtn : true,
-                    Header : 'Edit Role',
-                    hideStatus: true
-                };
-                break;
-            case 'remove':
-                dialogObj.values = {
-                    disableNameInput: true,
-                    disableDescriptionInput: true,
-                    disablePrivilegesInput: true,
-                    disablePrivilegesCheckboxes: true,
-                    hideEditBtn : true,
-                    hideCreateBtn: true,
-                    hideRemoveBtn : false,
-                    Header : 'Remove Role',
-                    hideStatus: false
-                };
-                break;
-            case 'create':
-                dialogObj.values = {
-                    disableNameInput: false,
-                    disableDescriptionInput: false,
-                    disablePrivilegesInput: false,
-                    disablePrivilegesCheckboxes: false,
-                    hideEditBtn : true,
-                    hideCreateBtn: false,
-                    hideRemoveBtn : true,
-                    Header : 'Remove Role',
-                    hideStatus: false
-                };
-                break;
-            default:
-
-
-        }
-        dialogObj.values['name'] = roleLineObj['name'];
-        dialogObj.values['description'] = roleLineObj['description'];
-        dialogObj.values['privileges'] = roleLineObj['privileges'];
-    };
-     **/
-
-    //self.removeRole = dialogObj.removeRole;
-    //dialogObj.removeRole = function(id){
-    //    dialogObj.values['hideStatus'] = false;
-    //    dialogObj.values['statusText'] = "Removing Role: "+ id;
-    //};
-
-    //self.checkBoxTester = dialogObj.checkBoxTester;
-    //dialogObj.checkBoxTester = function(priv2check, PrivList){
-    //    return PrivList.indexOf(priv2check) >= 0
-    //};
-
-
-    //self.getPrivCheckboxesState = dialogObj.getPrivCheckboxesState;
-    //dialogObj.getPrivCheckboxesState = function(p){
-    //    return(dialogObj.values.privCbs[p]);
-    //};
-
     return dialogObj
 });
 
@@ -254,25 +170,14 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogService) {
     var self = this;
     self.roles = roles;
     self.roles.get(function(res){
-        // remember that fullPrivList is an array.
-        self.fullPrivList = res;
+        self.fullPrivList = res; // remember that fullPrivList is an array.
     });
     self.dialogObj = dialogService;
 
     // Expand Role row into dialog
     self.openDialog = function(id,dialogType){
-        //self.roleID = id;
+        // next line is the dialog Object constructor/init
         self.dialogObj.initDialog(dialogType, self.roles, id, self.fullPrivList);
-        //if (id > 0) {
-         //   self.dialogObj.set(dialogType, self.roles.list[id]);
-        //} else {
-         //   self.dialogObj.set(dialogType, {
-          //      name: "please insert name",
-           //     description: "Please write a description",
-            //    privileges: "please choose privileges"
-            //});
-       // }
-
         ngDialog.closeAll();
         ngDialog.open({
             template: 'dNewTemplate.html',
@@ -302,7 +207,6 @@ myApp.controller('MainCtrl', function($scope, ngDialog, roles, dialogService) {
     self.create = function() {
 
         ngDialog.closeAll();
-        alert(Object.keys(self.dialogObj.inputs.cbs['View Data']));
         self.roles.create(function (res) {
             if (res.statusText == "OK") {
                 self.roles.get()
