@@ -36,10 +36,12 @@
 <button type="submit" id="create" ng-hide="main.dialogObj.buttons['hideCreateBtn']"
         ng-click="main.create()">Create Role</button>
 
-<button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
-
 <button type="submit" id="moveToEditView" ng-hide="main.dialogObj.buttons['hideGoToEditModeBtn']"
         ng-click="main.openDialog(main.dialogObj.general['roleID'],'toEditMode')">Go to edit mode</button>
+
+<button type="submit" id="discard" ng-click="closeThisDialog()">Discard/Close</button>
+
+
 
 
 </body>
